@@ -1,0 +1,21 @@
+hasher: {}
+
+redis:
+  image:
+    repository: redis
+    tag: latest
+  service:
+    port: 6379
+  
+rng:
+  readinessProbe:
+    httpGet:
+      port: 80
+      path: /1
+
+webui:
+  readinessProbe:
+    enabled: false
+
+worker:
+  service: false
