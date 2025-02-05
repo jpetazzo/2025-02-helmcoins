@@ -4,6 +4,7 @@ kind: Service
 metadata:
   name: {{ include "generic.fullname" . }}
   labels:
+    hello: world
     {{- include "generic.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
